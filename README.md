@@ -1,7 +1,6 @@
-<br />
 <div align="center">
   <a href="https://github.com/dong-wkim/dandoc">
-    <img src="img/logo4.png" alt="Logo" width="200" height="200">
+    <img src="img/logo4.png" alt="Logo" width="400" height="200">
   </a>
 
   <h3 align="center">Dandoc</h3>
@@ -24,8 +23,9 @@
 </div>
 <!-- network graph for conversions here -->
 
+Through five forward and five backward conversion scripts, this python script allows conversion between txt, yml, json, sql, db, and csv files that are automatically updated for easy relational database creation and data entry through either flat spreadsheets or (upcoming) data forms. Example usage will be a systematic review and meta-analysis.  
 
-## file formats
+## data
 
 ```python
 formats = [
@@ -38,24 +38,31 @@ formats = [
 ]
 ```
 
-## python scripts
+## src
 
-### forward conversion
+- [X] 1. `txt_yml.py`
+- [X] 2. `yml_json.py`
+- [X] 3. `json_sql.py`
+- [ ] 4. `sql_db.py`, `import_psql.ps1`
+- [ ] 5. `db_csv.py`, `export_csv.ps1`
 
-| no. | input | output |     src      |
-| :-- | :---: | :----: | :----------: |
-| 1   |  txt  |  yaml  | txt_yaml.py  |
-| 2   |  yaml |  json  | yaml_json.py |
-| 3   |  json |  sql   | json_sql.py  |
-| 4   |  sql  |   db   |  sql_db.py   |
-| 5   |   db  |  csv   |  db_csv.py   |
+## conversion table
 
-### backwards conversion
+| no. | input | output |     src      | description |
+| :-- | :---: | :----: | :----------: | :---  |
+| 1   |  txt  |  yml  | `txt_yml.py`  |  |
+| 2   |  yml |  json  | `yml_json.py` |  |
+| 3   |  json |  sql   | `json_sql.py`  |  |
+| 4   |  sql  |   db   |  `sql_db.py`   | Creation of database and tables in postgreSQL |
+| 5   |   db  |  csv   |  `db_csv.py`   | Export of csv files from postgreSQL |
+| 6   | yml  |  txt   | `yml_txt.py`  |  |
+| 7   | json  |  yml  | `json_yml.py` |  |
+| 8   |  sql  |  json  | `sql_json.py`  |  |
+| 9   |  db   |  sql   | `db_sql.py`    |  |
+| 10  |  csv  |   db   | `csv_db.py`    |  |
 
-| no. | input | output |      src     |
-| :-- | :---: | :----: | :----------: |
-| 6   | yaml  |  txt   | yaml_txt.py  |
-| 7   | json  |  yaml  | json_yaml.py |
-| 8   |  sql  |  json  | sql_json.py  |
-| 9   |  db   |  sql   | db_sql.py    |
-| 10  |  csv  |   db   | csv_db.py    |
+<!-- CHANGELOG:
+
+Better to use psql or python for converting between JSON and CSV files?
+
+-->
