@@ -1,12 +1,12 @@
 <div align="center">
   <a href="https://github.com/dong-wkim/dandoc">
-    <img src="img/logo4.png" alt="Logo" width="400" height="200">
+    <img src="img/logo.png" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">Dandoc</h3>
 
   <p align="center">
-    "Dandoc" is my (Dan's) version of the popular file conversion method Pandoc. <br />
+    "Dandoc" is my (Dan`s) version of the popular file conversion method Pandoc. <br />
     <br />
     This repository converts simple plaintext (.txt) outline syntax to relational database table creation through network graph theory.
     <br />
@@ -29,12 +29,12 @@ Through five forward and five backward conversion scripts, this python script al
 
 ```python
 formats = [
-    '.txt', 
-    '.yaml', 
-    'json',
-    'sql',
-    'csv',
-    'db' 
+    `.txt`, 
+    `.yaml`, 
+    `json`,
+    `sql`,
+    `csv`,
+    `db` 
 ]
 ```
 
@@ -43,8 +43,23 @@ formats = [
 - [X] 1. `txt_yml.py`
 - [X] 2. `yml_json.py`
 - [X] 3. `json_sql.py`
-- [ ] 4. `sql_db.py`, `import_psql.ps1`
-- [ ] 5. `db_csv.py`, `export_csv.ps1`
+- [ ] 4. `sql_db.py`
+- [ ] 5. `db_csv.py`
+- [ ] 10. `csv_db.py`
+- [ ] 9. `db_sql.py`
+- [ ] 8. `sql_json.py`
+- [ ] 7. `json_yml.py`
+- [ ] 6. `yml_txt.py`
+
+### docs
+
+`dandoc` formats = `txt`, `yml`, `json`
+`pandoc` formats = `pdf`, `md`, `docx`
+
+### data
+
+`dandoc` formats = `sql`, `db`, `csv`
+`pandoc` formats = `xlsx`
 
 ## conversion table
 
@@ -61,8 +76,22 @@ formats = [
 | 9   |  db   |  sql   | `db_sql.py`    |  |
 | 10  |  csv  |   db   | `csv_db.py`    |  |
 
-<!-- CHANGELOG:
+
+<!-- Comments/notes:
 
 Better to use psql or python for converting between JSON and CSV files?
+
+Full paths to scripts:
+"E:\20-29 projects\.github\repositories\dandoc\src\txt_yml.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\yml_json.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\json_sql.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\sql_db.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\db_csv.py"
+
+"E:\20-29 projects\.github\repositories\dandoc\src\csv_db.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\db_sql.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\sql_json.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\json_yml.py"
+"E:\20-29 projects\.github\repositories\dandoc\src\yml_txt.py"
 
 -->
