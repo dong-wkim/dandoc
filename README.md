@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/dong-wkim/dandoc">
-    <img src="img/logo.png" alt="Logo" width="400" height="200">
+    <img src="img/logo.png" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">Dandoc</h3>
