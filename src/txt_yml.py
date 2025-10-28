@@ -1,15 +1,7 @@
 import pandas as pd
 import yaml
 
-directory = "./" + input("Enter the relative path to the directory the input file is located: ")
-input_format = input("Enter the input file format without dot (e.g., txt): ")
-input_file_name = input("Enter file name: ") + "." + input_format
-output_format = input("Enter the format you wish to convert the input file to without dot (e.g., txt): ")
-output_file_name = input_file_name + "." + output_format
-
-file_name = directory + input_file_name
-
-def parse_markdown_to_dict(lines):
+def convert(lines, file_name, input_format, output_format):
     """Parse markdown syntax into hierarchical dictionary structure."""
     result = {}
     current_section = result
@@ -155,7 +147,7 @@ def markdown_to_yaml(lines):
     parsed_dict = parse_markdown_to_dict(lines)
     return yaml.dump(parsed_dict, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
-def yaml_to_markdown(lines):
+def yaml_to_markdown(lines, file_name):
     """Convert YAML structure back to markdown syntax."""
     yaml_content = ''.join(lines)
     
@@ -171,29 +163,29 @@ def yaml_to_markdown(lines):
         print(f"Error parsing YAML: {e}")
         return f"# Error parsing YAML: {e}"
 
-# Read the input file
-with open(file_name, "r", encoding="utf-8") as file:
-    lines = file.readlines()
+def convert(file_name, input_file, output_file):
+    with open(file_name, "r", encoding="utf-8") as file:
+        lines = file.readlines()
 
-# Determine conversion direction based on file formats
-if input_format.lower() == 'md' and output_format.lower() == 'yaml':
-    # Markdown to YAML conversion
-    print("Converting Markdown to YAML...")
-    result = markdown_to_yaml(lines)
-    
-elif input_format.lower() == 'yaml' and output_format.lower() == 'md':
-    # YAML to Markdown conversion
-    print("Converting YAML to Markdown...")
-    result = yaml_to_markdown(lines)
-    
-else:
-    print(f"Unsupported conversion: {input_format} to {output_format}")
-    print("Supported conversions: md -> yaml, yaml -> md")
-    exit(1)
+    # Determine conversion direction based on file formats
+    if input_format.lower() == 'md' and output_format.lower() == 'yaml':
+        # Markdown to YAML conversion
+        print("Converting Markdown to YAML...")
+        result = markdown_to_yaml(lines)
+        
+    elif input_format.lower() == 'yaml' and output_format.lower() == 'md':
+        # YAML to Markdown conversion
+        print("Converting YAML to Markdown...")
+        result = yaml_to_markdown(lines)
+        
+    else:
+        print(f"Unsupported conversion: {input_format} to {output_format}")
+        print("Supported conversions: md -> yaml, yaml -> md")
+        exit(1)
 
-# Write the result to output file
-output_path = directory + output_file_name
-with open(output_path, "w", encoding="utf-8") as output_file:
-    output_file.write(result)
+    # Write the result to output file
+    output_path = directory + output_file_name
+    with open(output_path, "w", encoding="utf-8") as output_file:
+        output_file.write(result)
 
-print(f"✅ Conversion completed! Output saved to: {output_path}") 
+    print(f"✅ Conversion completed! Output saved to: {output_path}") 

@@ -81,6 +81,7 @@ formats = [
 
 Better to use psql or python for converting between JSON and CSV files?
 
+<<<<<<< HEAD
 Full paths to scripts:
 "E:\20-29 projects\.github\repositories\dandoc\src\txt_yml.py"
 "E:\20-29 projects\.github\repositories\dandoc\src\yml_json.py"
@@ -95,3 +96,6 @@ Full paths to scripts:
 "E:\20-29 projects\.github\repositories\dandoc\src\yml_txt.py"
 
 -->
+=======
+-->
+>>>>>>> refs/remotes/origin/master

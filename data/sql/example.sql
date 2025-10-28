@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS example (
     authors VARCHAR,
     title VARCHAR,
     abstract VARCHAR,
-    year NUM(4),
+    year VARCHAR,
     doi VARCHAR,
     source VARCHAR
 );
